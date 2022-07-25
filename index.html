@@ -1,0 +1,66 @@
+<!-- App Name: GSTR4A_Aggregater
+Author: Aagashram Neelakandan -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSTR4A Agrregator</title>
+    
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js" integrity="sha512-UnrKxsCMN9hFk7M56t4I4ckB4N/2HHi0w/7+B/1JsXIX3DmyBcsGpT3/BsuZMZf+6mAr0vP81syWtfynHJ69JA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./static/js/excelAggregation.js"></script>
+    
+    <link rel="stylesheet" href="./static/css/style.css">
+
+</head>
+<body>
+
+  <!-- Title and Description -->
+ 
+    <div class = "tile_wrapper">
+      <h1>GSTR 4A AGGREGATOR</h1>
+      <p>Select multiple GSTR 4A Excel files for which the site provides aggregations based on <b>Taxable Value</b> for individual Rates for every Trade/Legal Name in the B2B Sheet.</p>
+      <p><i>All data are processed locally and no data is uploaded to the server.</i></p>
+      
+      <!-- Social Media Links -->
+      <div class="link_Logos" >
+          <a href="https://www.linkedin.com/in/aagashram-neelakandan-88b70913b/" target="_blank">
+              <img alt="LinkedIn" src="static/img/linkedIn.png" class="responsive_image" style="border-radius: 20%;">
+          </a>
+          
+          <a href="https://github.com/AagashramNeelakandan" target="_blank">
+              <img alt="Github" src="static/img/Github.png" class="responsive_image" style="border-radius: 20%;" >
+          </a>
+          
+          <a href="https://www.behance.net/aagashramn" target="_blank">
+              <img alt="Behance" src="static/img/Behance.png" class="responsive_image" style="border-radius: 5%;" >
+          </a>
+      </div>
+
+      <input class="get_excel" type="file" id="input" accept=".xlsx" multiple onchange="performAggregation(this)"/>
+
+    </div>
+
+    <!-- Gradient Blob -->
+    <div class="blob"></div>    
+  
+  <!-- Display Table  -->
+
+  <div class="tg-wrap" id="table_div" style="display:none;">
+    <table id="tg-rd8jF" class="tg">
+      <thead>
+        <tr>
+          <th class="tg-sx1p">Trade/Legal name</th>
+          <th class="tg-sx1p">GSTIN of supplier</th>
+          <th class="tg-sx1p" colspan="1">Rate (%)</th>
+          <th class="tg-sx1p" colspan="1">Taxable value (₹)</th>
+        </tr>
+      </thead>
+      <tbody id = 'tableBody'></tbody>
+    </table>
+  </div>
+  
+</body>
+
+</html>
