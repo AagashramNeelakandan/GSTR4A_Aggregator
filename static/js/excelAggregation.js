@@ -12,7 +12,9 @@ function fileValidation(fileInput) {
   const allowedExtensions = /(\.xlsx)$/i // (\.doc|\.docx|\.odt|\.pdf|\.tex|\.txt|\.rtf|\.wps|\.wks|\.wpd)$/i;
   if (!allowedExtensions.exec(filePath)) {
     alert('Invalid file type. Please upload .xlsx files')
-    fileInput.value = ''
+    // Deleting the Previous Tables
+    document.getElementById('table_div').style.display = 'none'
+    document.getElementById('tableBody').innerHTML = ''
     return false
   }
   return true
